@@ -4,6 +4,11 @@ const list = document.querySelector('ul');
 const item = document.getElementsByTagName('li');
 
 enterButton.addEventListener('click', addListItem);
+input.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        addListItem();
+    }
+});
 
 function addListItem() {
     const newListItem = document.createElement('li');
