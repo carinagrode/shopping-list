@@ -10,9 +10,16 @@ input.addEventListener('keypress', function (event) {
     }
 });
 
+
 function addListItem() {
     const newListItem = document.createElement('li');
     newListItem.appendChild(document.createTextNode(input.value));
     list.appendChild(newListItem);
     input.value = '';
+
+    newListItem.addEventListener('click', setItemToDone);
+    function setItemToDone() {
+        newListItem.classList.toggle('done');
+    }
 }
+
