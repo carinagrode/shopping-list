@@ -2,3 +2,12 @@ const input = document.getElementById('userInput');
 const enterButton = document.getElementById('enter');
 const list = document.querySelector('ul');
 const item = document.getElementsByTagName('li');
+
+enterButton.addEventListener('click', addListItem);
+
+function addListItem() {
+    const newListItem = document.createElement('li');
+    newListItem.appendChild(document.createTextNode(input.value));
+    list.appendChild(newListItem);
+    input.value = '';
+}
