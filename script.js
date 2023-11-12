@@ -21,5 +21,17 @@ function addListItem() {
     function setItemToDone() {
         newListItem.classList.toggle('done');
     }
+   
+    const deleteButton = document.createElement('button');
+    deleteButton.appendChild(document.createTextNode('X'));
+    newListItem.appendChild(deleteButton);
+
+
+    deleteButton.addEventListener('click', deleteItem);
+
+    function deleteItem() {
+        newListItem.classList.add('delete');
+    }
+
 }
 
